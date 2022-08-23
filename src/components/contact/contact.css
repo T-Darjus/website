@@ -1,0 +1,13 @@
+.contact__container {
+  display: flex;
+  justify-content: space-between;
+  padding: 200px 0 290px 150px;
+}
+
+.contact__textbox .heading-primary {
+  padding-bottom: 120px;
+}
+
+.contact__textbox .phone {
+  padding-bottom: 35px;
+}

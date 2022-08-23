@@ -1,0 +1,53 @@
+.wood {
+  padding-top: 260px;
+  padding-bottom: 130px;
+}
+
+.wood .heading-primary {
+  max-width: 750px;
+  margin-left: 140px;
+  margin-bottom: 125px;
+  line-height: 133%;
+}
+
+.wood__cards {
+  display: flex;
+  justify-content: space-between;
+}
+.wood__card {
+  max-width: 280px;
+}
+
+.card__image {
+  margin-bottom: 40px;
+}
+.card__title {
+  font-family: "Inter";
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 120%;
+  margin-bottom: 38px;
+  padding-left: 75px;
+}
+.card__specs {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.card__specs li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.card__specs .secondary-text {
+  line-height: 120%;
+}
+.v-icon {
+  width: 25px;
+  height: 25px;
+}
+.x-icon {
+  width: 19px;
+  height: 19px;
+  margin: 0 3px;
+}

@@ -1,0 +1,42 @@
+.footer {
+  background-color: var(--main-bg);
+  padding-top: 70px;
+  padding-bottom: 60px;
+  box-shadow: 0px -6px 52px rgba(245, 245, 245, 0.17);
+}
+
+.footer__links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 150px;
+}
+.footer-link {
+  color: var(--main-font-color);
+}
+.footer__privacy .footer-link:hover,
+.phone .footer-link:hover,
+.location .footer-link:hover {
+  border-bottom: 1px solid var(--main-font-color);
+}
+
+.location,
+.phone {
+  display: flex;
+  gap: 14px;
+}
+.phone-icon,
+.location-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.footer__privacy .footer-link {
+  display: inline-block;
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 140%;
+  margin-top: 60px;
+  color: var(--main-font-color);
+}

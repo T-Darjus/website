@@ -1,0 +1,33 @@
+.advantages {
+  padding-top: 140px;
+  padding-bottom: 150px;
+}
+
+.advantages .heading-primary {
+  margin-left: 140px;
+  margin-bottom: 120px;
+  line-height: 133%;
+}
+.advantages__content {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 120px;
+}
+iframe {
+  border-radius: 42px;
+}
+.advantages__text-column {
+  max-width: 450px;
+  margin-right: 35px;
+}
+.advantages__text-column p:not(:last-child) {
+  padding-bottom: 46px;
+  padding-right: 65px;
+}
+.advantages__text-column .secondary-text {
+  line-height: 140%;
+}
+.advantages .btn {
+  display: block;
+  margin: 0 auto;
+}

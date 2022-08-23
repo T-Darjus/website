@@ -1,13 +1,137 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --main-font-color: #f5f5f5;
+  --main-bg: #222021;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+  font-family: "KyivType sans";
+  src: url("./fonts/dmitry_rastvortsev_-_kyivtype_sans_medium--webfont.woff2")
+      format("woff2"),
+    url("./fonts/dmitry_rastvortsev_-_kyivtype_sans_medium--webfont.woff")
+      format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+/*style reset*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+:focus,
+:active {
+  outline: none;
+}
+a:focus,
+a:active {
+  outline: none;
+}
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  line-height: 1;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  color: var(--main-font-color);
+  background-color: var(--main-bg);
+}
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+input::-ms-clear {
+  display: none;
+}
+button {
+  cursor: pointer;
+}
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+a,
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+ul li {
+  list-style: none;
+}
+img {
+  vertical-align: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*--------------------*/
+
+.main-container {
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.heading-primary {
+  font-family: "KyivType Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 90px;
+  text-transform: uppercase;
+}
+.secondary-text {
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 30px;
+}
+
+.btn {
+  color: var(--main-font-color);
+  font-family: "Inter";
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 120%;
+  background: #728bad;
+  border-radius: 42px;
+  padding: 11px 70px;
+}
+
+.btn:hover {
+  color: #8e3921;
+  background: #d5dcee;
+}
+
+.left-arrow,
+.right-arrow {
+  width: 48px;
+  height: 48px;
 }

@@ -1,0 +1,29 @@
+.navigation .navigation__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 0;
+}
+
+.navigation__list {
+  display: flex;
+  gap: 50px;
+  padding-right: 115px;
+}
+
+.nav-link,
+.link-active {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+}
+
+.navigation__link .nav-link {
+  color: var(--main-font-color);
+}
+.navigation__link .nav-link:hover {
+  border-bottom: 1px solid var(--main-font-color);
+}
+
+.link-active {
+  color: #a3b8d7;
+}
