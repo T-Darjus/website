@@ -3,9 +3,10 @@
   justify-content: space-between;
   background-color: var(--section-bg);
   border-radius: 43px 0px 0px 43px;
-  padding: 43px 0 57px 50px;
+  padding: 43px 90px 57px 50px;
   transform: translateX(80px);
-  padding-right: 90px;
+  margin-top: 150px;
+
   position: relative;
   filter: drop-shadow(0px 4px 52px rgba(245, 245, 245, 0.17));
 }

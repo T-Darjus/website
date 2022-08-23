@@ -1,12 +1,14 @@
-/* .navigation {
+.navigation {
   background-color: #1e0c06;
-} */
+  box-shadow: 0px -8px 52px rgba(238, 238, 238, 0.17);
+  border-radius: 0px 0px 79px 79px;
+}
 
 .navigation .navigation__container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 50px 0;
+  padding: 50px 20px;
 }
 
 .navigation__list {
