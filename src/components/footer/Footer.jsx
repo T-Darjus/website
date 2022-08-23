@@ -29,9 +29,9 @@ const Footer = () => {
                 />
               </svg>
               <p className="secondary-text">
-                <Link className="footer-link" to="tel:+391 4585 98521">
+                <a className="footer-link" href="tel:+391 4585 98521">
                   +391 4585 98521
-                </Link>
+                </a>
               </p>
             </div>
             <div className="location">
@@ -56,16 +56,21 @@ const Footer = () => {
               </svg>
 
               <p className="secondary-text">
-                <Link className="footer-link" to="#">
+                <a
+                  className="footer-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://maps.google.com/maps?ll=41.765199,71.929443&z=10&t=m&hl=lt&gl=LT&mapclient=embed"
+                >
                   Sawmill, Asia
-                </Link>
+                </a>
               </p>
             </div>
           </div>
           <p className="footer__privacy">
-            <Link className="footer-link" to="#">
+            <a className="footer-link" href="/">
               Privacy Policy
-            </Link>
+            </a>
           </p>
         </div>
       </div>

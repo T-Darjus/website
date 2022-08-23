@@ -1,3 +1,7 @@
+/* .navigation {
+  background-color: #1e0c06;
+} */
+
 .navigation .navigation__container {
   display: flex;
   justify-content: space-between;

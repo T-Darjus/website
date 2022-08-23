@@ -20,6 +20,7 @@ function App() {
       </Routes>
       <ScrollToTop
         smooth
+        viewBox="0 0 24 24"
         top="300"
         style={{ backgroundColor: "#f5f5f5" }}
         component={<IconSvg />}

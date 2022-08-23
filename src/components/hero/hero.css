@@ -1,7 +1,7 @@
 .hero .hero__container {
   display: flex;
   justify-content: space-between;
-  background: #1e0c06;
+  background-color: var(--section-bg);
   border-radius: 43px 0px 0px 43px;
   padding: 43px 0 57px 50px;
   transform: translateX(80px);
@@ -9,16 +9,15 @@
   position: relative;
   filter: drop-shadow(0px 4px 52px rgba(245, 245, 245, 0.17));
 }
-/* .hero__container::after {
+.hero__container::after {
   content: "";
-  background-color: #1e0c06;
+  background-color: var(--section-bg);
   position: absolute;
   height: 100%;
   width: 3000px;
   top: 0px;
   right: -3000px;
-  z-index: -5;
-} */
+}
 .hero .heading-primary {
   max-width: 600px;
   line-height: 115%;
