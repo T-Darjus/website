@@ -8,7 +8,12 @@ const Footer = () => {
       <div className="main-container">
         <div className="footer__container">
           <div className="footer__links">
-            <div className="logo">
+            <div
+              onClick={() => {
+                window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+              }}
+              className="logo"
+            >
               <Link className="footer-link" to="/">
                 <img src="img/logo.png" alt="logo" />
               </Link>
