@@ -40,6 +40,7 @@ const Work = () => {
             {dots.map((element, elementIndex) => {
               return (
                 <div
+                  key={elementIndex}
                   className={element}
                   onClick={() => setIndex(elementIndex)}
                 ></div>
