@@ -9,7 +9,7 @@ const Hero = () => {
           <div className="hero__textbox">
             <h1 className="heading-primary">Solid wood products</h1>
             <p className="hero__text">
-              Oak, beech, ash from <strong>600 eur</strong> per m3
+              Oak, beech, ash from <br /> <strong>600 eur</strong> per m3
             </p>
             <button className="btn">Order</button>
           </div>

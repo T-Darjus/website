@@ -1,15 +1,9 @@
-.work {
-  padding: 130px 0;
-}
 .work .heading-primary {
-  margin-left: 130px;
-  margin-bottom: 125px;
   line-height: 133%;
 }
 
 .slider {
   position: relative;
-  min-height: 799px;
 }
 .slider__image {
   display: flex;
@@ -20,19 +14,14 @@
 }
 .slider__image img {
   width: 100%;
-  border-radius: 42px;
 }
 .slider__dots {
-  margin: 26px;
   display: flex;
   justify-content: center;
   gap: 18px;
 }
 .slider__dot {
-  width: 26px;
-  height: 26px;
   border-radius: 50%;
-  border: 4px solid #728bad;
   cursor: pointer;
 }
 .dot--active {
@@ -43,7 +32,6 @@
   padding: 5px;
   border-radius: 100px;
   position: absolute;
-  top: 45%;
 }
 .slider__btn:hover {
   background-color: rgba(0, 255, 255, 0.139);
@@ -51,12 +39,86 @@
 .btn--left {
   left: -10px;
 }
-.left-arrow {
+.left-arrow,
+.right-arrow {
   color: #a3b8d7;
 }
 .btn--right {
   right: -10px;
 }
-.right-arrow {
-  color: #a3b8d7;
+/*-----MEDIA (fluid)---------*/
+@media screen and (min-width: 320px) {
+  .work {
+    padding: calc(30px + 100 * ((100vw - 320px) / 940)) 0;
+  }
+  .work .heading-primary {
+    margin-left: calc(20px + 110 * ((100vw - 320px) / 940));
+    margin-bottom: calc(45px + 80 * ((100vw - 320px) / 940));
+  }
+
+  .slider {
+    min-height: calc(250px + 549 * ((100vw - 320px) / 940));
+  }
+
+  .slider__image {
+    margin: 0 calc(15px + 35 * ((100vw - 320px) / 940));
+  }
+  .slider__image img {
+    border-radius: calc(14px + 28 * ((100vw - 320px) / 940));
+  }
+  .left-arrow,
+  .right-arrow {
+    width: calc(16px + 32 * ((100vw - 320px) / 940));
+    height: calc(16px + 32 * ((100vw - 320px) / 940));
+  }
+  .slider__dot {
+    width: calc(13px + 13 * ((100vw - 320px) / 940));
+    height: calc(13px + 13 * ((100vw - 320px) / 940));
+    border: calc(3px + 1 * ((100vw - 320px) / 940)) solid #728bad;
+  }
+  .slider__btn {
+    top: calc(80px + 270 * ((100vw - 320px) / 940));
+  }
+  .slider__dots {
+    margin: calc(14px + 12 * ((100vw - 320px) / 940));
+  }
+}
+
+@media screen and (min-width: 1260px) {
+  .work {
+    padding: 130px 0;
+  }
+  .work .heading-primary {
+    margin-left: 130px;
+    margin-bottom: 125px;
+  }
+
+  .slider {
+    min-height: 799px;
+  }
+
+  .slider__image {
+    margin: 0 50px;
+  }
+  .slider__image img {
+    border-radius: 42px;
+  }
+
+  .left-arrow,
+  .right-arrow {
+    width: 48px;
+    height: 48px;
+  }
+  .slider__dot {
+    width: 26px;
+    height: 26px;
+    border: 4px solid #728bad;
+  }
+  .slider__btn {
+    top: 350px;
+  }
+
+  .slider__dots {
+    margin: 26px;
+  }
 }

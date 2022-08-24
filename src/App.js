@@ -1,7 +1,7 @@
 import Navbar from "./components/navbar/Navbar";
 import Main from "./pages/main/Main";
 import Gallery from "./pages/gallery/Gallery";
-import Aboutus from "./pages/aboutus/Aboutus";
+import AboutUs from "./pages/aboutUs/AboutUs";
 import Contact from "./components/contact/Contact";
 import Footer from "./components/footer/Footer";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -15,7 +15,7 @@ function App() {
       <Routes>
         <Route path={"/"} element={<Main />} />
         <Route path={"/gallery"} element={<Gallery />} />
-        <Route path={"/aboutus"} element={<Aboutus />} />
+        <Route path={"/aboutus"} element={<AboutUs />} />
         <Route path={"/contact"} element={<Contact />} />
       </Routes>
       <ScrollToTop

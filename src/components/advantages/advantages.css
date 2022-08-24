@@ -1,33 +1,97 @@
-.advantages {
-  padding-top: 140px;
-  padding-bottom: 150px;
-}
-
 .advantages .heading-primary {
-  margin-left: 140px;
-  margin-bottom: 120px;
   line-height: 133%;
 }
 .advantages__content {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 120px;
 }
-iframe {
-  border-radius: 42px;
-}
+
 .advantages__text-column {
   max-width: 450px;
-  margin-right: 35px;
+  /* margin-right: 35px; */
 }
-.advantages__text-column p:not(:last-child) {
-  padding-bottom: 46px;
-  padding-right: 65px;
-}
+
 .advantages__text-column .secondary-text {
   line-height: 140%;
 }
 .advantages .btn {
   display: block;
   margin: 0 auto;
+}
+/*-----MEDIA (fluid)---------*/
+@media screen and (min-width: 320px) {
+  .advantages {
+    padding-top: calc(20px + 120 * ((100vw - 320px) / 940));
+    padding-bottom: calc(40px + 100 * ((100vw - 320px) / 940));
+  }
+  .advantages .heading-primary {
+    margin-left: calc(10px + 130 * ((100vw - 320px) / 940));
+    margin-bottom: calc(45px + 75 * ((100vw - 320px) / 940));
+  }
+  .advantages__content {
+    margin-bottom: calc(45px + 75 * ((100vw - 320px) / 940));
+  }
+  .advantages__text-column p:not(:last-child) {
+    padding-bottom: calc(23px + 23 * ((100vw - 320px) / 940));
+    padding-right: 65px;
+  }
+  iframe {
+    border-radius: calc(14px + 28 * ((100vw - 320px) / 940));
+  }
+}
+@media screen and (min-width: 1260px) {
+  .advantages {
+    padding-top: 140px;
+    padding-bottom: 150px;
+  }
+  .advantages .heading-primary {
+    margin-left: 140px;
+    margin-bottom: 120px;
+  }
+  .advantages__content {
+    margin-bottom: 120px;
+  }
+  .advantages__text-column p:not(:last-child) {
+    padding-bottom: 46px;
+    padding-right: 65px;
+  }
+  iframe {
+    border-radius: 42px;
+  }
+}
+/*-----MEDIA (fixed)---------*/
+@media screen and (max-width: 1180px) {
+  .advantages__content {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .advantages__text-column {
+    max-width: 700px;
+    margin-left: calc(20px + 15 * ((100vw - 320px) / 860));
+    margin-bottom: calc(30px + 40 * ((100vw - 320px) / 860));
+  }
+  iframe {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  iframe {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 850px) {
+  .advantages .advantages__text-column {
+    padding-left: 30px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  iframe {
+    height: calc(200px + 200 * ((100vw - 320px) / 447));
+    width: 85%;
+  }
+  .advantages .advantages__text-column p {
+    padding-right: 0;
+  }
 }

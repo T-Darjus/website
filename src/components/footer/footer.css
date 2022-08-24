@@ -40,3 +40,43 @@
   margin-top: 60px;
   color: var(--main-font-color);
 }
+
+/*-----MEDIA (fluid)---------*/
+@media screen and (min-width: 320px) {
+  .footer__privacy .footer-link {
+    font-size: calc(12px + 8 * ((100vw - 320px) / 940));
+    margin-top: calc(40px + 20 * ((100vw - 320px) / 940));
+  }
+}
+@media screen and (min-width: 1260px) {
+  .footer__privacy .footer-link {
+    font-size: 20px;
+    margin-top: 60px;
+  }
+}
+/*-----MEDIA (fixed)---------*/
+@media screen and (max-width: 950px) {
+  .footer__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .footer__links {
+    padding: 0;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .footer__links .logo {
+    padding-bottom: 40px;
+  }
+  .footer-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer-link img {
+    width: 80%;
+  }
+}

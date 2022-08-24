@@ -5,7 +5,9 @@ const Advantages = () => {
   return (
     <section className="advantages">
       <div className="main-container">
-        <h2 className="heading-primary">Advantages working with us</h2>
+        <h2 className="heading-primary">
+          Advantages <br /> working with us
+        </h2>
         <div className="advantages__content">
           <iframe
             width="600"

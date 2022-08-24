@@ -4,7 +4,8 @@
 
 .questions .main-container {
   padding-bottom: 110px;
-  /* background: url("img/questions/questions-1.png") 110% 180% no-repeat; */
+  background: url("http://localhost:3000/img/questions/questions-1.png") 110%
+    180% no-repeat;
 }
 
 .questions .heading-primary {
@@ -61,4 +62,114 @@ input::placeholder {
 .questions .secondary-text {
   line-height: 140%;
   text-align: right;
+}
+
+/*-----MEDIA (fluid)---------*/
+@media screen and (min-width: 320px) {
+  form .btn {
+    max-width: calc(86px + 130 * ((100vw - 320px) / 860));
+  }
+}
+@media screen and (min-width: 1260px) {
+  form .btn {
+    max-width: 216px;
+  }
+}
+/*-----MEDIA (fixed)---------*/
+@media screen and (max-width: 1180px) {
+  .questions .main-container {
+    padding-left: calc(20px + 170 * ((100vw - 320px) / 860));
+  }
+  .questions .heading-primary {
+    text-align: left;
+  }
+  .questions__content {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 40px;
+    margin-top: 42px;
+  }
+  .questions .secondary-text {
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .questions .main-container {
+    background: none;
+  }
+  textarea,
+  input {
+    width: 80%;
+    border: 3px solid #728bad;
+    padding: 14px 30px;
+    font-size: 20px;
+  }
+  textarea::placeholder,
+  input::placeholder {
+    font-size: 25px;
+    line-height: 120%;
+  }
+
+  textarea:focus,
+  textarea:valid,
+  input:focus,
+  input:valid {
+    border: 3px solid #6c200b;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .questions .main-container {
+    padding-bottom: 60px;
+  }
+  .questions {
+    padding-top: 50px;
+  }
+  .questions__content {
+    margin-top: 30px;
+  }
+  .questions .secondary-text {
+    padding-right: 20px;
+  }
+
+  textarea,
+  input {
+    width: 90%;
+  }
+  textarea::placeholder,
+  input::placeholder {
+    font-size: 20px;
+  }
+  textarea,
+  textarea:focus,
+  textarea:valid {
+    border-radius: 36px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  textarea,
+  input {
+    padding: 12px 26px;
+    font-size: 16px;
+    border: 2px solid #728bad;
+    width: 95%;
+  }
+  textarea:focus,
+  textarea:valid,
+  input:focus,
+  input:valid {
+    border: 2px solid #6c200b;
+  }
+  textarea::placeholder,
+  input::placeholder {
+    font-size: 18px;
+  }
+
+  textarea,
+  textarea:focus,
+  textarea:valid {
+    border-radius: 28px;
+  }
 }

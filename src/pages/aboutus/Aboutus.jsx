@@ -3,7 +3,7 @@ import About from "../../components/about/About";
 import Work from "../../components/work/Work";
 import Questions from "../../components/questions/Questions";
 
-const Aboutus = () => {
+const AboutUs = () => {
   return (
     <>
       <About />
@@ -13,4 +13,4 @@ const Aboutus = () => {
   );
 };
 
-export default Aboutus;
+export default AboutUs;

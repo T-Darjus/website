@@ -1,10 +1,5 @@
-.wood {
-  padding-top: 260px;
-  padding-bottom: 130px;
-}
-
 .wood .heading-primary {
-  max-width: 750px;
+  max-width: 710px;
   margin-left: 140px;
   margin-bottom: 125px;
   line-height: 133%;
@@ -18,9 +13,6 @@
   max-width: 280px;
 }
 
-.card__image {
-  margin-bottom: 40px;
-}
 .card__title {
   font-family: "Inter";
   font-weight: 700;
@@ -42,12 +34,88 @@
 .card__specs .secondary-text {
   line-height: 120%;
 }
-.v-icon {
-  width: 25px;
-  height: 25px;
+
+/*-----MEDIA (fluid)---------*/
+@media screen and (min-width: 320px) {
+  .wood {
+    padding-top: calc(100px + 160 * ((100vw - 320px) / 940));
+    padding-bottom: calc(60px + 70 * ((100vw - 320px) / 940));
+  }
+  .wood .heading-primary {
+    margin-left: calc(20px + 120 * ((100vw - 320px) / 940));
+    margin-bottom: calc(50px + 75 * ((100vw - 320px) / 940));
+  }
+  .card__title {
+    font-size: calc(20px + 10 * ((100vw - 320px) / 940));
+    padding-left: calc(30px + 45 * ((100vw - 320px) / 940));
+    margin-bottom: calc(20px + 18 * ((100vw - 320px) / 940));
+  }
+  .card__image img {
+    width: calc(90px + 115 * ((100vw - 320px) / 940));
+    height: calc(90px + 115 * ((100vw - 320px) / 940));
+  }
+  .card__image {
+    margin-bottom: calc(20px + 20 * ((100vw - 320px) / 940));
+  }
+  .v-icon {
+    width: calc(15px + 10 * ((100vw - 320px) / 940));
+    height: calc(15px + 10 * ((100vw - 320px) / 940));
+  }
+  .x-icon {
+    width: calc(12px + 7 * ((100vw - 320px) / 940));
+    height: calc(12px + 7 * ((100vw - 320px) / 940));
+    /* margin: 0 3px; */
+  }
 }
-.x-icon {
-  width: 19px;
-  height: 19px;
-  margin: 0 3px;
+@media screen and (min-width: 1260px) {
+  .wood {
+    padding-top: 260px;
+    padding-bottom: 130px;
+  }
+  .wood .heading-primary {
+    margin-left: 140px;
+    margin-bottom: 125px;
+  }
+  .card__title {
+    font-size: 30px;
+    padding-left: 75px;
+    margin-bottom: 38px;
+  }
+  .card__image img {
+    width: 205px;
+    height: 205px;
+  }
+  .card__image {
+    margin-bottom: 40px;
+  }
+  .v-icon {
+    width: 25px;
+    height: 25px;
+  }
+  .x-icon {
+    width: 19px;
+    height: 19px;
+    margin: 0 3px;
+  }
+}
+/*-----MEDIA (fixed)---------*/
+@media screen and (max-width: 766px) {
+  .wood__cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    justify-items: center;
+  }
+
+  .wood__cards .wood__card:first-child {
+    margin-top: 60px;
+  }
+
+  .wood__cards .wood__card:last-child {
+    grid-column: 2;
+    margin-top: -140px;
+  }
+  .card__specs {
+    gap: 15px;
+  }
 }

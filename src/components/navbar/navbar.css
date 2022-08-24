@@ -33,3 +33,26 @@
 .link-active {
   color: #a3b8d7;
 }
+
+/*-----MEDIA (fluid)---------*/
+@media screen and (min-width: 320px) {
+  .navigation__container .logo img {
+    width: calc(90px + 110 * ((100vw - 320px) / 940));
+  }
+}
+@media screen and (min-width: 1260px) {
+  .navigation__container .logo img {
+    width: 200px;
+  }
+}
+/*-----MEDIA (fixed)---------*/
+@media screen and (max-width: 900px) {
+  .navigation__list {
+    gap: 40px;
+    padding-right: 70px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  /* mobile nav */
+}
