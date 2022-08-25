@@ -18,6 +18,7 @@
 .phone .footer-link:hover,
 .location .footer-link:hover {
   border-bottom: 1px solid var(--main-font-color);
+  border-radius: 0;
 }
 
 .location,
@@ -39,6 +40,7 @@
   line-height: 140%;
   margin-top: 60px;
   color: var(--main-font-color);
+  background: transparent;
 }
 
 /*-----MEDIA (fluid)---------*/

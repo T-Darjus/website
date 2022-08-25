@@ -38,7 +38,7 @@
 /*-----MEDIA (fluid)---------*/
 @media screen and (min-width: 320px) {
   .wood {
-    padding-top: calc(100px + 160 * ((100vw - 320px) / 940));
+    padding-top: calc(30px + 130 * ((100vw - 320px) / 940));
     padding-bottom: calc(60px + 70 * ((100vw - 320px) / 940));
   }
   .wood .heading-primary {
@@ -69,7 +69,7 @@
 }
 @media screen and (min-width: 1260px) {
   .wood {
-    padding-top: 260px;
+    padding-top: 160px;
     padding-bottom: 130px;
   }
   .wood .heading-primary {

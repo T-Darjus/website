@@ -34,6 +34,16 @@
   color: #a3b8d7;
 }
 
+.mob-link {
+  font-family: "Montserrat", sans-serif;
+  color: #1e0c06;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.mob-links {
+  display: none;
+}
 /*-----MEDIA (fluid)---------*/
 @media screen and (min-width: 320px) {
   .navigation__container .logo img {
@@ -54,5 +64,21 @@
 }
 
 @media screen and (max-width: 767px) {
-  /* mobile nav */
+  .navigation__list {
+    gap: 20px;
+    padding-right: 30px;
+  }
+  .nav-link,
+  .link-active {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 599.5px) {
+  .navigation__list {
+    display: none;
+  }
+  .mob-links {
+    display: flex;
+  }
 }
