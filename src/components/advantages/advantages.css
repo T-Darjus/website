@@ -18,6 +18,13 @@
   display: block;
   margin: 0 auto;
 }
+
+.MuiInput-root input:valid,
+.MuiInput-root input:focus {
+  background: transparent;
+  border: none;
+  border-radius: none;
+}
 /*-----MEDIA (fluid)---------*/
 @media screen and (min-width: 320px) {
   .advantages {
@@ -39,6 +46,7 @@
     border-radius: calc(14px + 28 * ((100vw - 320px) / 940));
   }
 }
+
 @media screen and (min-width: 1260px) {
   .advantages {
     padding-top: 140px;

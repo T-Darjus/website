@@ -121,7 +121,13 @@ const Questions = () => {
                     </DialogContentText>
                   </DialogContent>
                   <DialogActions>
-                    <Button onClick={handleClose}>Ok</Button>
+                    <Button
+                      color="success"
+                      variant="outlined"
+                      onClick={handleClose}
+                    >
+                      Ok
+                    </Button>
                   </DialogActions>
                 </Dialog>
               </div>

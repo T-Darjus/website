@@ -1,7 +1,24 @@
 import React from "react";
 import "./advantages.css";
+import Button from "@mui/material/Button";
+import TextField from "@mui/material/TextField";
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import DialogContentText from "@mui/material/DialogContentText";
+import DialogTitle from "@mui/material/DialogTitle";
 
 const Advantages = () => {
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
     <section className="advantages">
       <div className="main-container">
@@ -28,7 +45,37 @@ const Advantages = () => {
             </p>
           </div>
         </div>
-        <button className="btn">Receive a consultation</button>
+        <div>
+          <button onClick={handleClickOpen} className="btn">
+            Receive a consultation
+          </button>
+          <Dialog open={open} onClose={handleClose}>
+            <DialogTitle>Receive a callback.</DialogTitle>
+            <DialogContent>
+              <DialogContentText>
+                Please anter your phone number, and we will call you soon!
+              </DialogContentText>
+              <TextField
+                autoFocus
+                margin="dense"
+                id="name"
+                label="Phone number"
+                type="tel"
+                fullWidth
+                required
+                variant="standard"
+              />
+            </DialogContent>
+            <DialogActions>
+              <Button sx={{ color: "red" }} onClick={handleClose}>
+                Cancel
+              </Button>
+              <Button color="success" variant="outlined" onClick={handleClose}>
+                Request
+              </Button>
+            </DialogActions>
+          </Dialog>
+        </div>
       </div>
     </section>
   );
