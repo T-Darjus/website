@@ -1,39 +1,130 @@
 import React from "react";
 import "./questions.css";
+import { useState } from "react";
+import { send } from "emailjs-com";
+import Button from "@mui/material/Button";
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import DialogContentText from "@mui/material/DialogContentText";
+import DialogTitle from "@mui/material/DialogTitle";
 
 const Questions = () => {
+  //  form values
+  const [firstName, setFirstName] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [customerMessage, setCustomerMessage] = useState("");
+  // email send
+  const [toSend, setToSend] = useState({
+    from_name: "",
+    from_tel: "",
+    message: "",
+  });
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+
+    send("service_8rr5c1p", "template_ixzumjt", toSend, "FXEpKT850edlSDYfP")
+      .then((response) => {
+        console.log("SUCCESS!", response.status, response.text);
+      })
+      .catch((err) => {
+        console.log("FAILED...", err);
+      });
+  };
+
+  // dialog popup
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    if (firstName === "" || phoneNumber === "" || customerMessage === "") {
+      alert("Please fill a form!");
+    } else setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+    setFirstName("");
+    setPhoneNumber("");
+    setCustomerMessage("");
+    setToSend({
+      from_name: "",
+      from_tel: "",
+      message: "",
+    });
+  };
+
   return (
     <section className="questions">
       <div className="main-container">
         <h2 className="heading-primary">Any questions?</h2>
         <div className="questions__content">
           <div className="questions__form">
-            <form action="submit" method="get">
+            <form onSubmit={onSubmit}>
               <input
                 type="text"
-                name="name"
+                name="from_name"
                 id="name"
                 placeholder="Your name"
                 required
+                value={firstName}
+                onChange={(event) => {
+                  toSend.from_name = event.target.value;
+                  setFirstName(event.target.value);
+                }}
               />
               <input
                 type="tel"
-                name="tel"
+                name="from_tel"
                 id="tel"
                 placeholder="Your telephone number"
                 required
+                value={phoneNumber}
+                onChange={(event) => {
+                  toSend.from_tel = event.target.value;
+                  setPhoneNumber(event.target.value);
+                }}
               />
               <textarea
-                name="question"
+                name="message"
                 id="question"
                 cols="30"
                 rows="6"
                 placeholder="You question"
                 required
+                value={customerMessage}
+                onChange={(event) => {
+                  toSend.message = event.target.value;
+                  setCustomerMessage(event.target.value);
+                }}
               ></textarea>
-              <button type="submit" className="btn">
-                Send
-              </button>
+              <div>
+                <button onClick={handleClickOpen} type="submit" className="btn">
+                  Send
+                </button>
+                <Dialog
+                  open={open}
+                  onClose={handleClose}
+                  aria-labelledby="alert-dialog-title"
+                  aria-describedby="alert-dialog-description"
+                >
+                  <DialogTitle id="alert-dialog-title">
+                    {"Thank you for Your question!"}
+                  </DialogTitle>
+                  <DialogContent>
+                    <DialogContentText
+                      className="secondary-text"
+                      id="alert-dialog-description"
+                    >
+                      We will contact you within 1 working day. <br /> Have a
+                      nice day!
+                    </DialogContentText>
+                  </DialogContent>
+                  <DialogActions>
+                    <Button onClick={handleClose}>Ok</Button>
+                  </DialogActions>
+                </Dialog>
+              </div>
             </form>
           </div>
           <div className="questions__text">
