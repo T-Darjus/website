@@ -55,7 +55,7 @@ const Hero = () => {
                   <Box
                     component="form"
                     sx={{
-                      "& .MuiTextField-root": { m: 1, width: "25ch" },
+                      "& .MuiTextField-root": { m: 1, width: "21ch" },
                     }}
                     noValidate
                     autoComplete="off"
@@ -81,7 +81,7 @@ const Hero = () => {
                       />
                     </div>
                     <FormControl
-                      sx={{ m: 1, mt: 5, minWidth: 250 }}
+                      sx={{ m: 1, mt: 5, minWidth: 210 }}
                       size="medium"
                     >
                       <InputLabel id="volume-select">Select volume</InputLabel>
@@ -103,7 +103,7 @@ const Hero = () => {
                       <FormHelperText>Volume, m3</FormHelperText>
                     </FormControl>
                     <FormControl
-                      sx={{ m: 1, mt: 5, minWidth: 250 }}
+                      sx={{ m: 1, mt: 5, minWidth: 210 }}
                       size="medium"
                     >
                       <InputLabel id="wood-select">Select wood</InputLabel>
@@ -124,13 +124,10 @@ const Hero = () => {
                       </Select>
                       <FormHelperText>Wood</FormHelperText>
                     </FormControl>
-                    <FormControl
-                      sx={{ m: 1, mt: 5, minWidth: 250 }}
-                      size="medium"
-                    >
+                    <FormControl sx={{ mt: 5, minWidth: 210 }} size="medium">
                       <Autocomplete
                         id="country-select-demo"
-                        sx={{ width: 250 }}
+                        sx={{ width: 210 }}
                         options={countries}
                         autoHighlight
                         getOptionLabel={(option) => option.label}
