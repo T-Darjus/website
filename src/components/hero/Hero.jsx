@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import "./hero.css";
+import countries from "../../data/heroData";
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
-import FormHelperText from "@mui/material/FormHelperText";
 import DialogTitle from "@mui/material/DialogTitle";
+import DialogContentText from "@mui/material/DialogContentText";
+import FormHelperText from "@mui/material/FormHelperText";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import InputLabel from "@mui/material/InputLabel";
@@ -15,7 +17,13 @@ import Select from "@mui/material/Select";
 import Autocomplete from "@mui/material/Autocomplete";
 
 const Hero = () => {
-  const [open, setOpen] = React.useState(false);
+  const [confirmation, setConfirmation] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [formName, setFormName] = useState("");
+  const [formTel, setFormTel] = useState("");
+  const [formVolume, setFormVolume] = useState("");
+  const [formWood, setFormWood] = useState("");
+  const [formCountry, setFormCountry] = useState("");
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -25,16 +33,31 @@ const Hero = () => {
     setOpen(false);
   };
 
-  const [volume, setVolume] = React.useState("");
-
-  const handleVolumeChange = (event) => {
-    setVolume(event.target.value);
+  const handleConfirmationClose = () => {
+    setConfirmation(false);
   };
-  const [wood, setWood] = React.useState("");
 
-  const handleWoodChange = (event) => {
-    setWood(event.target.value);
+  // ----------------------------------
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setOpen(false);
+    setConfirmation(true);
   };
+
+  const handleOrder = (e) => {
+    if (
+      formName === "" ||
+      formTel === "" ||
+      formVolume === "" ||
+      formWood === "" ||
+      formCountry === ""
+    ) {
+      // return;
+    } else {
+      alert("Thank you, your order submitted successfully.");
+    }
+  };
+  // -------------------------------------
 
   return (
     <section className="hero">
@@ -53,21 +76,25 @@ const Hero = () => {
                 <DialogTitle variant="h4">Order form</DialogTitle>
                 <DialogContent>
                   <Box
+                    onSubmit={handleSubmit}
                     component="form"
                     sx={{
                       "& .MuiTextField-root": { m: 1, width: "21ch" },
                     }}
-                    noValidate
+                    // noValidate
                     autoComplete="off"
                   >
                     <div>
                       <TextField
+                        required
                         id="outlined-number"
                         label="Full name"
                         type="text"
-                        required
                         InputLabelProps={{
                           shrink: true,
+                        }}
+                        onChange={(e) => {
+                          setFormName(e.target.value);
                         }}
                       />
                       <TextField
@@ -78,6 +105,9 @@ const Hero = () => {
                         InputLabelProps={{
                           shrink: true,
                         }}
+                        onChange={(e) => {
+                          setFormTel(e.target.value);
+                        }}
                       />
                     </div>
                     <FormControl
@@ -86,11 +116,14 @@ const Hero = () => {
                     >
                       <InputLabel id="volume-select">Select volume</InputLabel>
                       <Select
+                        required
                         labelId="volume-select"
                         id="volume-select"
-                        value={volume}
+                        value={formVolume}
                         label="Select volume"
-                        onChange={handleVolumeChange}
+                        onChange={(e) => {
+                          setFormVolume(e.target.value);
+                        }}
                         autoWidth
                       >
                         <MenuItem value="">
@@ -108,11 +141,14 @@ const Hero = () => {
                     >
                       <InputLabel id="wood-select">Select wood</InputLabel>
                       <Select
+                        required
                         labelId="wood-select"
                         id="wood-select"
-                        value={wood}
+                        value={formWood}
                         label="Select wood"
-                        onChange={handleWoodChange}
+                        onChange={(e) => {
+                          setFormWood(e.target.value);
+                        }}
                         autoWidth
                       >
                         <MenuItem value="">
@@ -149,30 +185,62 @@ const Hero = () => {
                         )}
                         renderInput={(params) => (
                           <TextField
+                            required
                             {...params}
                             label="Choose a country"
                             inputProps={{
                               ...params.inputProps,
-                              // autoComplete: "new-password",
+                            }}
+                            onChange={(e) => {
+                              setFormCountry(e.target.value);
                             }}
                           />
                         )}
                       />
                     </FormControl>
+                    <DialogActions>
+                      <Button sx={{ color: "red" }} onClick={handleClose}>
+                        Cancel
+                      </Button>
+                      <Button
+                        type="submit"
+                        color="success"
+                        variant="outlined"
+                        size="medium"
+                        sx={{ fontWeight: 600 }}
+                        onClick={handleOrder}
+                      >
+                        Place order
+                      </Button>
+                    </DialogActions>
                   </Box>
                 </DialogContent>
+              </Dialog>
+              <Dialog
+                open={confirmation}
+                onClose={handleConfirmationClose}
+                aria-labelledby="alert-dialog-title"
+                aria-describedby="alert-dialog-description"
+              >
+                <DialogTitle id="alert-dialog-title">
+                  {"Thank you for your order!"}
+                </DialogTitle>
+                <DialogContent>
+                  <DialogContentText
+                    className="secondary-text"
+                    id="alert-dialog-description"
+                  >
+                    We will process your order within 3 working day's <br />{" "}
+                    Have a nice day!
+                  </DialogContentText>
+                </DialogContent>
                 <DialogActions>
-                  <Button sx={{ color: "red" }} onClick={handleClose}>
-                    Cancel
-                  </Button>
                   <Button
                     color="success"
                     variant="outlined"
-                    size="medium"
-                    sx={{ fontWeight: 600 }}
-                    onClick={handleClose}
+                    onClick={handleConfirmationClose}
                   >
-                    Place order
+                    Ok
                   </Button>
                 </DialogActions>
               </Dialog>
@@ -197,65 +265,3 @@ const Hero = () => {
 };
 
 export default Hero;
-
-const countries = [
-  { code: "AT", label: "Austria", phone: "43" },
-  {
-    code: "BA",
-    label: "Bosnia and Herzegovina",
-    phone: "387",
-  },
-  { code: "BE", label: "Belgium", phone: "32" },
-  { code: "BG", label: "Bulgaria", phone: "359" },
-  {
-    code: "CG",
-    label: "Congo, Republic of the",
-    phone: "242",
-  },
-  { code: "CH", label: "Switzerland", phone: "41" },
-  { code: "CZ", label: "Czech Republic", phone: "420" },
-  {
-    code: "DE",
-    label: "Germany",
-    phone: "49",
-    suggested: true,
-  },
-  { code: "DK", label: "Denmark", phone: "45" },
-  { code: "EE", label: "Estonia", phone: "372" },
-  { code: "ES", label: "Spain", phone: "34" },
-  { code: "FI", label: "Finland", phone: "358" },
-  {
-    code: "FR",
-    label: "France",
-    phone: "33",
-    suggested: true,
-  },
-  { code: "GB", label: "United Kingdom", phone: "44" },
-  { code: "HR", label: "Croatia", phone: "385" },
-  { code: "HU", label: "Hungary", phone: "36" },
-  { code: "ID", label: "Indonesia", phone: "62" },
-  { code: "IE", label: "Ireland", phone: "353" },
-  { code: "IL", label: "Israel", phone: "972" },
-  { code: "IN", label: "India", phone: "91" },
-  { code: "IS", label: "Iceland", phone: "354" },
-  { code: "IT", label: "Italy", phone: "39" },
-  { code: "LI", label: "Liechtenstein", phone: "423" },
-
-  { code: "LT", label: "Lithuania", phone: "370" },
-  { code: "LU", label: "Luxembourg", phone: "352" },
-  { code: "LV", label: "Latvia", phone: "371" },
-  { code: "MC", label: "Monaco", phone: "377" },
-  {
-    code: "MD",
-    label: "Moldova, Republic of",
-    phone: "373",
-  },
-  { code: "NO", label: "Norway", phone: "47" },
-  { code: "PL", label: "Poland", phone: "48" },
-  { code: "PT", label: "Portugal", phone: "351" },
-  { code: "RO", label: "Romania", phone: "40" },
-  { code: "RS", label: "Serbia", phone: "381" },
-  { code: "SE", label: "Sweden", phone: "46" },
-  { code: "SG", label: "Singapore", phone: "65" },
-  { code: "SI", label: "Slovenia", phone: "386" },
-];

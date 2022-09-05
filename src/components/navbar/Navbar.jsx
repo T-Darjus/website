@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import "./navbar.css";
 import IconButton from "@mui/material/IconButton";
@@ -7,7 +7,7 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 
 const Navbar = () => {
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -25,6 +25,11 @@ const Navbar = () => {
           </Link>
         </div>
         <ul className="navigation__list">
+          <li className="navigation__link">
+            <NavLink className={"nav-link"} to="/">
+              Home
+            </NavLink>
+          </li>
           <li className="navigation__link">
             <NavLink
               className={({ isActive }) =>
@@ -80,6 +85,11 @@ const Navbar = () => {
               "aria-labelledby": "basic-button",
             }}
           >
+            <MenuItem onClick={handleClose}>
+              <Link className="mob-link" to="/">
+                Home
+              </Link>
+            </MenuItem>
             <MenuItem onClick={handleClose}>
               <Link className="mob-link" to="/gallery">
                 Gallery

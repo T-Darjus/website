@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
 import "./questions.css";
-import { useState } from "react";
 import { send } from "emailjs-com";
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
@@ -26,19 +25,19 @@ const Questions = () => {
 
     send("service_8rr5c1p", "template_ixzumjt", toSend, "FXEpKT850edlSDYfP")
       .then((response) => {
-        console.log("SUCCESS!", response.status, response.text);
+        return response.status;
       })
       .catch((err) => {
-        console.log("FAILED...", err);
+        return err;
       });
   };
 
   // dialog popup
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
 
   const handleClickOpen = () => {
     if (firstName === "" || phoneNumber === "" || customerMessage === "") {
-      alert("Please fill a form!");
+      return;
     } else setOpen(true);
   };
 
@@ -109,7 +108,7 @@ const Questions = () => {
                   aria-describedby="alert-dialog-description"
                 >
                   <DialogTitle id="alert-dialog-title">
-                    {"Thank you for Your question!"}
+                    {"Thank you for your question!"}
                   </DialogTitle>
                   <DialogContent>
                     <DialogContentText

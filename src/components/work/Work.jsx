@@ -1,7 +1,9 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import "./work.css";
-import data from "./workData";
+import data from "../../data/workData";
+import ArrowLeft from "../icon/ArrowLeft";
+import ArrowRight from "../icon/ArrowRight";
 
 const Work = () => {
   const [images] = useState(data);
@@ -52,40 +54,14 @@ const Work = () => {
             className="slider__btn btn--left"
             onClick={() => setIndex(index - 1)}
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="left-arrow"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2}
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M10 19l-7-7m0 0l7-7m-7 7h18"
-              />
-            </svg>
+            <ArrowLeft />
           </button>
           <button
             type="button"
             className="slider__btn btn--right"
             onClick={() => setIndex(index + 1)}
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="right-arrow"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2}
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M14 5l7 7m0 0l-7 7m7-7H3"
-              />
-            </svg>
+            <ArrowRight />
           </button>
         </div>
       </div>

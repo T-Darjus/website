@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./advantages.css";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
@@ -9,7 +9,7 @@ import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 
 const Advantages = () => {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
 
   const handleClickOpen = () => {
     setOpen(true);
