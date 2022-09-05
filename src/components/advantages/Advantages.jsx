@@ -9,7 +9,13 @@ import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 
 const Advantages = () => {
+  const [requestTel, setRequestTel] = useState("");
   const [open, setOpen] = useState(false);
+  const [confirmation, setConfirmation] = useState(false);
+
+  const handleConfirmationClose = () => {
+    setConfirmation(false);
+  };
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -17,6 +23,14 @@ const Advantages = () => {
 
   const handleClose = () => {
     setOpen(false);
+  };
+  const handleRequest = () => {
+    if (requestTel === "") {
+      alert("Please enter your phone number");
+    } else {
+      setOpen(false);
+      setConfirmation(true);
+    }
   };
 
   return (
@@ -64,14 +78,49 @@ const Advantages = () => {
                 fullWidth
                 required
                 variant="standard"
+                onChange={(e) => {
+                  setRequestTel(e.target.value);
+                }}
               />
             </DialogContent>
             <DialogActions>
               <Button sx={{ color: "red" }} onClick={handleClose}>
                 Cancel
               </Button>
-              <Button color="success" variant="outlined" onClick={handleClose}>
+              <Button
+                color="success"
+                variant="outlined"
+                onClick={handleRequest}
+              >
                 Request
+              </Button>
+            </DialogActions>
+          </Dialog>
+          <Dialog
+            open={confirmation}
+            onClose={handleConfirmationClose}
+            aria-labelledby="alert-dialog-title"
+            aria-describedby="alert-dialog-description"
+          >
+            <DialogTitle id="alert-dialog-title">
+              {"Thank you for your request!"}
+            </DialogTitle>
+            <DialogContent>
+              <DialogContentText
+                className="secondary-text"
+                id="alert-dialog-description"
+              >
+                We will call you within 1 working day's <br />
+                Have a nice day!
+              </DialogContentText>
+            </DialogContent>
+            <DialogActions>
+              <Button
+                color="success"
+                variant="outlined"
+                onClick={handleConfirmationClose}
+              >
+                Ok
               </Button>
             </DialogActions>
           </Dialog>
