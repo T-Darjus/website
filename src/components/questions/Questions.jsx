@@ -98,7 +98,12 @@ const Questions = () => {
                 }}
               ></textarea>
               <div>
-                <button onClick={handleClickOpen} type="submit" className="btn">
+                <button
+                  id="btn-questions"
+                  onClick={handleClickOpen}
+                  type="submit"
+                  className="btn"
+                >
                   Send
                 </button>
                 <Dialog

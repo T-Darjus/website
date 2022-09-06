@@ -69,13 +69,14 @@ const Hero = () => {
               Oak, beech, ash from <br /> <strong>600 eur</strong> per m3
             </p>
             <div>
-              <button onClick={handleClickOpen} className="btn">
+              <button onClick={handleClickOpen} className="btn" id="btn-order">
                 Order
               </button>
               <Dialog open={open} onClose={handleClose}>
                 <DialogTitle variant="h4">Order form</DialogTitle>
                 <DialogContent>
                   <Box
+                    id="hero-form"
                     onSubmit={handleSubmit}
                     component="form"
                     sx={{
@@ -87,7 +88,7 @@ const Hero = () => {
                     <div>
                       <TextField
                         required
-                        id="outlined-number"
+                        id="hero-form-name"
                         label="Full name"
                         type="text"
                         InputLabelProps={{
@@ -99,7 +100,7 @@ const Hero = () => {
                       />
                       <TextField
                         required
-                        id="outlined-number"
+                        id="hero-form-tel"
                         label="Phone number"
                         type="tel"
                         InputLabelProps={{
@@ -203,6 +204,7 @@ const Hero = () => {
                         Cancel
                       </Button>
                       <Button
+                        id="btn-place-order"
                         type="submit"
                         color="success"
                         variant="outlined"
@@ -217,6 +219,7 @@ const Hero = () => {
                 </DialogContent>
               </Dialog>
               <Dialog
+                id="order-confirmation"
                 open={confirmation}
                 onClose={handleConfirmationClose}
                 aria-labelledby="alert-dialog-title"

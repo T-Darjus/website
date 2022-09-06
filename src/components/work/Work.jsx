@@ -34,7 +34,7 @@ const Work = () => {
     <section className="work">
       <div className="main-container">
         <h2 className="heading-primary">Our work</h2>
-        <div className="slider">
+        <div className="slider" id="slider">
           <div className="slider__image">
             <img src={imgSrc} alt="wooden furniture" />
           </div>
